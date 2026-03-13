@@ -194,3 +194,62 @@ O frontend DEVE exibir esta mensagem literalmente ao usuário (FR-011 da spec).
   de string (prevenção de SQL Injection, OWASP A03).
 - O endpoint não expõe dados de outros professores — verificação de propriedade é feita
   antes de qualquer consulta de alunos.
+
+---
+
+## Exemplos de Uso e Edge Cases
+
+### 1) Token ausente (401)
+
+```bash
+curl -i http://localhost:3000/api/disciplinas/<disciplinaId>/alunos
+```
+
+Resposta esperada:
+
+```json
+{ "message": "Token de autenticação ausente ou inválido." }
+```
+
+### 2) Disciplina de outro professor (403)
+
+```bash
+curl -i \
+  -H "Authorization: Bearer <token-de-outro-professor>" \
+  http://localhost:3000/api/disciplinas/<disciplinaId>/alunos
+```
+
+Resposta esperada:
+
+```json
+{ "message": "Você não possui tal disciplina" }
+```
+
+### 3) Falha inesperada do servidor (503)
+
+```bash
+curl -i \
+  -H "Authorization: Bearer <token-valido>" \
+  http://localhost:3000/api/disciplinas/<disciplinaId>/alunos
+```
+
+Resposta esperada quando houver indisponibilidade:
+
+```json
+{ "message": "Servidor OFF" }
+```
+
+### 4) Nota pendente com presença calculada
+
+Trecho esperado de payload:
+
+```json
+{
+  "status": "ativo",
+  "coeficienteRendimento": null,
+  "percentualPresenca": 90.0,
+  "alertas": []
+}
+```
+
+Esse caso confirma a regra funcional de presença calculada independentemente de P1/P2 pendentes.

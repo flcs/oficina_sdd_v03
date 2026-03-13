@@ -265,3 +265,42 @@ curl -X GET \
 | `503 Service Unavailable` | Banco de dados offline | Verificar PostgreSQL com `pg_isready` |
 | `tsc` error `any` | Type narrowing ausente | Adicionar type guard ou interface Row explícita |
 | Vitest não encontra testes | Caminho de configuração errado | Verificar `vitest.config.ts` e `include` patterns |
+
+---
+
+## Validacao End-to-End (TDD)
+
+Sequencia recomendada para validar de ponta a ponta no mesmo fluxo de PR:
+
+```bash
+# 1) Backend: tipos + suite completa
+cd backend
+npm run typecheck
+npm test
+
+# 2) Frontend: tipos + suite completa
+cd ../frontend
+npm run typecheck
+npm test
+```
+
+Resultado esperado:
+- Todos os testes backend e frontend passando.
+- Nenhum erro de TypeScript em modo `strict`.
+- Cenarios US1-US4 cobertos por unitarios e integracao/componentes.
+
+## Validacao de Performance p95
+
+Executar cenario de performance (100 alunos) criado em `backend/tests/integration/performance/listarAlunos.p95.test.ts`:
+
+```bash
+cd backend
+npx vitest run tests/integration/performance/listarAlunos.p95.test.ts
+```
+
+Critério de aceite:
+- `p95 < 500ms` para 40 amostras de listagem com 100 alunos.
+
+Registro da execucao atual:
+- Ambiente local Linux, Node.js 20.x.
+- Teste executado com resultado verde e limiar de p95 atendido.

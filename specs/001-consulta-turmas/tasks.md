@@ -17,14 +17,14 @@
 
 **Purpose**: Initialize backend/frontend workspaces and baseline tooling
 
-- [ ] T001 Create backend workspace and npm metadata in backend/package.json
-- [ ] T002 [P] Create frontend workspace and npm metadata in frontend/package.json
-- [ ] T003 [P] Configure strict TypeScript compiler options in backend/tsconfig.json
-- [ ] T004 [P] Configure strict TypeScript compiler options in frontend/tsconfig.json
-- [ ] T005 [P] Configure backend Vitest + Supertest setup in backend/vitest.config.ts
-- [ ] T006 [P] Configure frontend Vitest + RTL setup in frontend/vitest.config.ts
-- [ ] T007 [P] Add backend environment template (DATABASE_URL, JWT_SECRET, PORT) in backend/.env.example
-- [ ] T008 [P] Add frontend environment template (VITE_API_BASE_URL) in frontend/.env.example
+- [X] T001 Create backend workspace and npm metadata in backend/package.json
+- [X] T002 [P] Create frontend workspace and npm metadata in frontend/package.json
+- [X] T003 [P] Configure strict TypeScript compiler options in backend/tsconfig.json
+- [X] T004 [P] Configure strict TypeScript compiler options in frontend/tsconfig.json
+- [X] T005 [P] Configure backend Vitest + Supertest setup in backend/vitest.config.ts
+- [X] T006 [P] Configure frontend Vitest + RTL setup in frontend/vitest.config.ts
+- [X] T007 [P] Add backend environment template (DATABASE_URL, JWT_SECRET, PORT) in backend/.env.example
+- [X] T008 [P] Add frontend environment template (VITE_API_BASE_URL) in frontend/.env.example
 
 ---
 
@@ -34,15 +34,15 @@
 
 **CRITICAL**: No user story implementation starts before this phase is complete.
 
-- [ ] T009 Create PostgreSQL schema script in backend/src/infrastructure/database/schema.sql
-- [ ] T010 [P] Define backend repository contract interface in backend/src/domain/repositories/IRepositorioTurmas.ts
-- [ ] T011 [P] Define access denied domain error in backend/src/domain/errors/AcessoNegadoException.ts
-- [ ] T012 [P] Implement JWT auth middleware with typed payload in backend/src/infrastructure/http/middlewares/autenticacaoJwt.ts
-- [ ] T013 [P] Add Express type augmentation for res.locals.professorId in backend/src/types/express.d.ts
-- [ ] T014 [P] Create pg pool factory and configuration in backend/src/infrastructure/database/pgPool.ts
-- [ ] T015 Implement backend HTTP bootstrap and route registration in backend/src/main.ts
-- [ ] T016 [P] Create frontend HTTP client foundation with token header support in frontend/src/application/ClienteHttpBase.ts
-- [ ] T017 [P] Create shared frontend API error mapper for 401/403/503 in frontend/src/application/ApiErrorMapper.ts
+- [X] T009 Create PostgreSQL schema script in backend/src/infrastructure/database/schema.sql
+- [X] T010 [P] Define backend repository contract interface in backend/src/domain/repositories/IRepositorioTurmas.ts
+- [X] T011 [P] Define access denied domain error in backend/src/domain/errors/AcessoNegadoException.ts
+- [X] T012 [P] Implement JWT auth middleware with typed payload in backend/src/infrastructure/http/middlewares/autenticacaoJwt.ts
+- [X] T013 [P] Add Express type augmentation for res.locals.professorId in backend/src/types/express.d.ts
+- [X] T014 [P] Create pg pool factory and configuration in backend/src/infrastructure/database/pgPool.ts
+- [X] T015 Implement backend HTTP bootstrap and route registration in backend/src/main.ts
+- [X] T016 [P] Create frontend HTTP client foundation with token header support in frontend/src/application/ClienteHttpBase.ts
+- [X] T017 [P] Create shared frontend API error mapper for 401/403/503 in frontend/src/application/ApiErrorMapper.ts
 
 **Checkpoint**: Foundation ready - user story work can proceed.
 
@@ -56,28 +56,28 @@
 
 ### Tests for User Story 1 (MANDATORY - TDD)
 
-- [ ] T018 [P] [US1] Add backend unit tests for value objects NotaProva/CargaHoraria/QuantidadeFaltas in backend/tests/unit/domain/valueObjects/avaliacaoPresenca.valueObjects.test.ts
-- [ ] T019 [P] [US1] Add backend unit tests for PoliticaNotasMedia (media P1/P2 e pendencia) in backend/tests/unit/domain/policies/politicaNotasMedia.test.ts
-- [ ] T020 [P] [US1] Add backend unit tests for CalculadoraPresenca (incluindo carga horaria zero) in backend/tests/unit/domain/services/calculadoraPresenca.test.ts
-- [ ] T021 [P] [US1] Add backend unit tests for ServicoConsultaTurmas with repository mock in backend/tests/unit/application/servicoConsultaTurmas.us1.test.ts
-- [ ] T022 [P] [US1] Add backend integration test for list endpoint ordering and base payload in backend/tests/integration/http/listarAlunos.us1.integration.test.ts
-- [ ] T023 [P] [US1] Add frontend unit tests for mapping API -> domain row model in frontend/tests/unit/application/clienteHttpTurmas.us1.test.ts
-- [ ] T024 [P] [US1] Add frontend component test for alphabetical table rendering in frontend/tests/components/TabelaAlunos.us1.test.tsx
-- [ ] T069 [P] [US1] Add frontend negative test asserting no edit/create/delete actions are rendered in frontend/tests/components/PaginaConsultaTurmas.readonly.us1.test.tsx
+- [X] T018 [P] [US1] Add backend unit tests for value objects NotaProva/CargaHoraria/QuantidadeFaltas in backend/tests/unit/domain/valueObjects/avaliacaoPresenca.valueObjects.test.ts
+- [X] T019 [P] [US1] Add backend unit tests for PoliticaNotasMedia (media P1/P2 e pendencia) in backend/tests/unit/domain/policies/politicaNotasMedia.test.ts
+- [X] T020 [P] [US1] Add backend unit tests for CalculadoraPresenca (incluindo carga horaria zero) in backend/tests/unit/domain/services/calculadoraPresenca.test.ts
+- [X] T021 [P] [US1] Add backend unit tests for ServicoConsultaTurmas with repository mock in backend/tests/unit/application/servicoConsultaTurmas.us1.test.ts
+- [X] T022 [P] [US1] Add backend integration test for list endpoint ordering and base payload in backend/tests/integration/http/listarAlunos.us1.integration.test.ts
+- [X] T023 [P] [US1] Add frontend unit tests for mapping API -> domain row model in frontend/tests/unit/application/clienteHttpTurmas.us1.test.ts
+- [X] T024 [P] [US1] Add frontend component test for alphabetical table rendering in frontend/tests/components/TabelaAlunos.us1.test.tsx
+- [X] T069 [P] [US1] Add frontend negative test asserting no edit/create/delete actions are rendered in frontend/tests/components/PaginaConsultaTurmas.readonly.us1.test.tsx
 
 ### Implementation for User Story 1
 
-- [ ] T025 [P] [US1] Implement backend value objects (NotaProva, CargaHoraria, QuantidadeFaltas, CoeficienteRendimento, PercentualPresenca) in backend/src/domain/valueObjects/
-- [ ] T026 [P] [US1] Implement backend entities NotasAvaliacao and InformacoesPresenca in backend/src/domain/entities/
-- [ ] T027 [US1] Implement PoliticaNotasMedia in backend/src/domain/policies/PoliticaNotasMedia.ts
-- [ ] T028 [US1] Implement CalculadoraPresenca in backend/src/domain/services/CalculadoraPresenca.ts
-- [ ] T029 [US1] Implement repository pg query for matriculas ordered by aluno nome in backend/src/infrastructure/repositories/RepositorioTurmasPg.ts
-- [ ] T030 [US1] Implement application use case listagem base in backend/src/application/ServicoConsultaTurmas.ts
-- [ ] T031 [US1] Implement list endpoint controller success path in backend/src/infrastructure/http/controllers/TurmasController.ts
-- [ ] T032 [P] [US1] Implement frontend domain models for line item (aluno/cr/presenca) in frontend/src/domain/entities/LinhaRelatorioAcademico.ts
-- [ ] T033 [US1] Implement frontend API client for listagem sem paginacao in frontend/src/application/ClienteHttpTurmas.ts
-- [ ] T034 [US1] Implement frontend hook for loading turma list in frontend/src/hooks/useConsultaTurmas.ts
-- [ ] T035 [US1] Implement read-only table page and row rendering in frontend/src/pages/PaginaConsultaTurmas.tsx
+- [X] T025 [P] [US1] Implement backend value objects (NotaProva, CargaHoraria, QuantidadeFaltas, CoeficienteRendimento, PercentualPresenca) in backend/src/domain/valueObjects/
+- [X] T026 [P] [US1] Implement backend entities NotasAvaliacao and InformacoesPresenca in backend/src/domain/entities/
+- [X] T027 [US1] Implement PoliticaNotasMedia in backend/src/domain/policies/PoliticaNotasMedia.ts
+- [X] T028 [US1] Implement CalculadoraPresenca in backend/src/domain/services/CalculadoraPresenca.ts
+- [X] T029 [US1] Implement repository pg query for matriculas ordered by aluno nome in backend/src/infrastructure/repositories/RepositorioTurmasPg.ts
+- [X] T030 [US1] Implement application use case listagem base in backend/src/application/ServicoConsultaTurmas.ts
+- [X] T031 [US1] Implement list endpoint controller success path in backend/src/infrastructure/http/controllers/TurmasController.ts
+- [X] T032 [P] [US1] Implement frontend domain models for line item (aluno/cr/presenca) in frontend/src/domain/entities/LinhaRelatorioAcademico.ts
+- [X] T033 [US1] Implement frontend API client for listagem sem paginacao in frontend/src/application/ClienteHttpTurmas.ts
+- [X] T034 [US1] Implement frontend hook for loading turma list in frontend/src/hooks/useConsultaTurmas.ts
+- [X] T035 [US1] Implement read-only table page and row rendering in frontend/src/pages/PaginaConsultaTurmas.tsx
 
 **Checkpoint**: US1 delivers MVP behavior end-to-end.
 
@@ -91,20 +91,20 @@
 
 ### Tests for User Story 2 (MANDATORY - TDD)
 
-- [ ] T036 [P] [US2] Add backend unit tests for GeradorAlertasCR thresholds in backend/tests/unit/domain/services/geradorAlertasCr.us2.test.ts
-- [ ] T037 [P] [US2] Add backend unit tests for GeradorAlertasPresenca thresholds in backend/tests/unit/domain/services/geradorAlertasPresenca.us2.test.ts
-- [ ] T038 [P] [US2] Add backend integration test validating alert payload combinations in backend/tests/integration/http/listarAlunos.alertas.us2.integration.test.ts
-- [ ] T039 [P] [US2] Add frontend component tests for CR and FALTAS badge colors/labels in frontend/tests/components/BadgesAlerta.us2.test.tsx
-- [ ] T040 [P] [US2] Add frontend page test for no-badge scenarios in frontend/tests/components/PaginaConsultaTurmas.alertas.us2.test.tsx
+- [X] T036 [P] [US2] Add backend unit tests for GeradorAlertasCR thresholds in backend/tests/unit/domain/services/geradorAlertasCr.us2.test.ts
+- [X] T037 [P] [US2] Add backend unit tests for GeradorAlertasPresenca thresholds in backend/tests/unit/domain/services/geradorAlertasPresenca.us2.test.ts
+- [X] T038 [P] [US2] Add backend integration test validating alert payload combinations in backend/tests/integration/http/listarAlunos.alertas.us2.integration.test.ts
+- [X] T039 [P] [US2] Add frontend component tests for CR and FALTAS badge colors/labels in frontend/tests/components/BadgesAlerta.us2.test.tsx
+- [X] T040 [P] [US2] Add frontend page test for no-badge scenarios in frontend/tests/components/PaginaConsultaTurmas.alertas.us2.test.tsx
 
 ### Implementation for User Story 2
 
-- [ ] T041 [P] [US2] Implement backend alert category/severity value objects in backend/src/domain/valueObjects/
-- [ ] T042 [P] [US2] Implement backend alert entities and first-class collection in backend/src/domain/entities/AlertasAcademicos.ts
-- [ ] T043 [US2] Implement backend services GeradorAlertasCR and GeradorAlertasPresenca in backend/src/domain/services/
-- [ ] T044 [US2] Compose alerts into output DTO in backend/src/application/ServicoConsultaTurmas.ts
-- [ ] T045 [P] [US2] Implement frontend badge components in frontend/src/components/badges/BadgeAlerta.tsx
-- [ ] T046 [US2] Integrate alert rendering in frontend table row component in frontend/src/components/TabelaAlunos/LinhaAluno.tsx
+- [X] T041 [P] [US2] Implement backend alert category/severity value objects in backend/src/domain/valueObjects/
+- [X] T042 [P] [US2] Implement backend alert entities and first-class collection in backend/src/domain/entities/AlertasAcademicos.ts
+- [X] T043 [US2] Implement backend services GeradorAlertasCR and GeradorAlertasPresenca in backend/src/domain/services/
+- [X] T044 [US2] Compose alerts into output DTO in backend/src/application/ServicoConsultaTurmas.ts
+- [X] T045 [P] [US2] Implement frontend badge components in frontend/src/components/badges/BadgeAlerta.tsx
+- [X] T046 [US2] Integrate alert rendering in frontend table row component in frontend/src/components/TabelaAlunos/LinhaAluno.tsx
 
 **Checkpoint**: US2 independently validates all visual alert rules.
 
@@ -118,17 +118,17 @@
 
 ### Tests for User Story 3 (MANDATORY - TDD)
 
-- [ ] T047 [P] [US3] Add backend unit tests for status trancado precedence in backend/tests/unit/application/servicoConsultaTurmas.trancado.us3.test.ts
-- [ ] T048 [P] [US3] Add backend integration test for trancado payload behavior in backend/tests/integration/http/listarAlunos.trancado.us3.integration.test.ts
-- [ ] T049 [P] [US3] Add frontend component test for badge trancado and CR placeholder in frontend/tests/components/LinhaAluno.trancado.us3.test.tsx
+- [X] T047 [P] [US3] Add backend unit tests for status trancado precedence in backend/tests/unit/application/servicoConsultaTurmas.trancado.us3.test.ts
+- [X] T048 [P] [US3] Add backend integration test for trancado payload behavior in backend/tests/integration/http/listarAlunos.trancado.us3.integration.test.ts
+- [X] T049 [P] [US3] Add frontend component test for badge trancado and CR placeholder in frontend/tests/components/LinhaAluno.trancado.us3.test.tsx
 
 ### Implementation for User Story 3
 
-- [ ] T050 [P] [US3] Implement StatusMatricula value object and behavior in backend/src/domain/valueObjects/StatusMatricula.ts
-- [ ] T051 [US3] Implement trancado handling in output composition in backend/src/application/ServicoConsultaTurmas.ts
-- [ ] T052 [US3] Extend repository row mapping for status field in backend/src/infrastructure/repositories/RepositorioTurmasPg.ts
-- [ ] T053 [P] [US3] Implement frontend Trancado badge component in frontend/src/components/badges/BadgeTrancado.tsx
-- [ ] T054 [US3] Integrate trancado row behavior in frontend table renderer in frontend/src/components/TabelaAlunos/LinhaAluno.tsx
+- [X] T050 [P] [US3] Implement StatusMatricula value object and behavior in backend/src/domain/valueObjects/StatusMatricula.ts
+- [X] T051 [US3] Implement trancado handling in output composition in backend/src/application/ServicoConsultaTurmas.ts
+- [X] T052 [US3] Extend repository row mapping for status field in backend/src/infrastructure/repositories/RepositorioTurmasPg.ts
+- [X] T053 [P] [US3] Implement frontend Trancado badge component in frontend/src/components/badges/BadgeTrancado.tsx
+- [X] T054 [US3] Integrate trancado row behavior in frontend table renderer in frontend/src/components/TabelaAlunos/LinhaAluno.tsx
 
 **Checkpoint**: US3 is independently functional and testable.
 
@@ -142,18 +142,18 @@
 
 ### Tests for User Story 4 (MANDATORY - TDD)
 
-- [ ] T055 [P] [US4] Add backend middleware tests for JWT missing/invalid token in backend/tests/unit/infrastructure/http/autenticacaoJwt.us4.test.ts
-- [ ] T056 [P] [US4] Add backend unit tests for ownership check and AcessoNegadoException in backend/tests/unit/application/servicoConsultaTurmas.acesso.us4.test.ts
-- [ ] T057 [P] [US4] Add backend integration tests for 403 and 503 responses in backend/tests/integration/http/listarAlunos.erros.us4.integration.test.ts
-- [ ] T058 [P] [US4] Add frontend hook tests for mapping 403 and 503 messages in frontend/tests/unit/hooks/useConsultaTurmas.erros.us4.test.ts
-- [ ] T059 [P] [US4] Add frontend page test for rendering "Voce nao possui tal disciplina" and "Servidor OFF" in frontend/tests/components/PaginaConsultaTurmas.erros.us4.test.tsx
+- [X] T055 [P] [US4] Add backend middleware tests for JWT missing/invalid token in backend/tests/unit/infrastructure/http/autenticacaoJwt.us4.test.ts
+- [X] T056 [P] [US4] Add backend unit tests for ownership check and AcessoNegadoException in backend/tests/unit/application/servicoConsultaTurmas.acesso.us4.test.ts
+- [X] T057 [P] [US4] Add backend integration tests for 403 and 503 responses in backend/tests/integration/http/listarAlunos.erros.us4.integration.test.ts
+- [X] T058 [P] [US4] Add frontend hook tests for mapping 403 and 503 messages in frontend/tests/unit/hooks/useConsultaTurmas.erros.us4.test.ts
+- [X] T059 [P] [US4] Add frontend page test for rendering "Voce nao possui tal disciplina" and "Servidor OFF" in frontend/tests/components/PaginaConsultaTurmas.erros.us4.test.tsx
 
 ### Implementation for User Story 4
 
-- [ ] T060 [US4] Implement ownership verification query and exception throw in backend/src/infrastructure/repositories/RepositorioTurmasPg.ts
-- [ ] T061 [US4] Implement 403/503 error mapping in backend controller in backend/src/infrastructure/http/controllers/TurmasController.ts
-- [ ] T062 [US4] Finalize JWT middleware wiring on list route in backend/src/main.ts
-- [ ] T063 [US4] Implement frontend error-state UI messaging in frontend/src/pages/PaginaConsultaTurmas.tsx
+- [X] T060 [US4] Implement ownership verification query and exception throw in backend/src/infrastructure/repositories/RepositorioTurmasPg.ts
+- [X] T061 [US4] Implement 403/503 error mapping in backend controller in backend/src/infrastructure/http/controllers/TurmasController.ts
+- [X] T062 [US4] Finalize JWT middleware wiring on list route in backend/src/main.ts
+- [X] T063 [US4] Implement frontend error-state UI messaging in frontend/src/pages/PaginaConsultaTurmas.tsx
 
 **Checkpoint**: US4 security and resilience behaviors are independently testable.
 
@@ -163,13 +163,13 @@
 
 **Purpose**: Final quality gates across all stories
 
-- [ ] T064 [P] Add end-to-end TDD verification guide in specs/001-consulta-turmas/quickstart.md
-- [ ] T065 [P] Add API usage and edge-case examples update in specs/001-consulta-turmas/contracts/api.md
-- [ ] T066 Run full backend test suite and strict type check via backend/package.json scripts
-- [ ] T067 Run full frontend test suite and strict type check via frontend/package.json scripts
-- [ ] T068 Perform code cleanup for Object Calisthenics compliance notes in specs/001-consulta-turmas/plan.md
-- [ ] T070 [P] Add backend performance test scenario for list endpoint p95 target in backend/tests/integration/performance/listarAlunos.p95.test.ts
-- [ ] T071 Execute and document p95 validation (<500ms ate 100 alunos) in specs/001-consulta-turmas/quickstart.md
+- [X] T064 [P] Add end-to-end TDD verification guide in specs/001-consulta-turmas/quickstart.md
+- [X] T065 [P] Add API usage and edge-case examples update in specs/001-consulta-turmas/contracts/api.md
+- [X] T066 Run full backend test suite and strict type check via backend/package.json scripts
+- [X] T067 Run full frontend test suite and strict type check via frontend/package.json scripts
+- [X] T068 Perform code cleanup for Object Calisthenics compliance notes in specs/001-consulta-turmas/plan.md
+- [X] T070 [P] Add backend performance test scenario for list endpoint p95 target in backend/tests/integration/performance/listarAlunos.p95.test.ts
+- [X] T071 Execute and document p95 validation (<500ms ate 100 alunos) in specs/001-consulta-turmas/quickstart.md
 
 ---
 

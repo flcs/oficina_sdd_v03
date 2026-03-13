@@ -109,3 +109,11 @@ no backend com `pg` e consumo via HTTP no frontend com JWT.
 |------|------------|-------------------------------------|
 | Composicao de entidades para regra de 2 atributos | Cumprir Object Calisthenics sem perder expressividade do dominio academico | Entidade plana unica violaria limite de 2 atributos e SRP |
 | Duplicacao controlada de classes de dominio entre frontend e backend | Evitar overhead de monorepo/shared package nesta feature | Pacote compartilhado agora aumentaria escopo e custo de setup sem ganho imediato |
+
+## Object Calisthenics Cleanup Notes
+
+- Status atual: classes de dominio e servicos seguem encapsulamento forte (sem getters genéricos de estado bruto fora de VO/entidade).
+- Regra de colecao de primeira classe aplicada em `AlertasAcademicos` para evitar manipulação ad-hoc de arrays no fluxo de dominio.
+- Reducao de condicionais espalhadas: regra de alerta extraida para `GeradorAlertasCR` e `GeradorAlertasPresenca`.
+- Precedencia de aluno trancado explicitada via `StatusMatricula`, reduzindo regras de string literal no servico de aplicação.
+- Pendencia futura recomendada: introduzir componente `TabelaAlunos` dedicado para reduzir responsabilidade de `PaginaConsultaTurmas` e manter UI mais aderente a SRP.
